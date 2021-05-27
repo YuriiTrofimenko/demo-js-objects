@@ -1,0 +1,24 @@
+<script>
+    /* const obj = {}
+    const obj2 = Object.create(null)
+    // console.log(obj.__proto__)
+    // console.log(obj2.__proto__)
+    console.log(obj)
+    console.log(obj2) */
+
+    const person = {
+        'name': 'Noname',
+        // 'age': 20
+    }
+    const obj3 = Object.create(person)
+    obj3.salary = 40000
+    // obj3.age = 20
+    // obj3.age = ''
+    // obj3.age = false
+    obj3.age = undefined
+    console.log(obj3)
+    console.log(obj3.name)
+    console.log('has name', obj3.hasOwnProperty('name'))
+    console.log('has salary', obj3.hasOwnProperty('salary'))
+    console.log('has age', Boolean(typeof obj3.age !== 'undefined'))
+</script>
