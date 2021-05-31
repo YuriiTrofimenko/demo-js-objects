@@ -81,8 +81,8 @@ employee.name = 'Bill Gates'
 employee.age = 65
 console.log(employee)
 console.log(person) */
-const obj = {}
-console.log(obj.__proto__)
+// const obj = {}
+// console.log(obj.__proto__)
 
 /* let newObject1 = Object.create(прототип)
 newObject1.hasOwnProperty("prop1")
@@ -101,3 +101,75 @@ Object.create(null) */
 разработанной в прошлом задании,
 так, чтобы упорядочение элементов массива было по значениям name
 в алфавитном порядке. */
+
+// const numbers = [1, -5, 7, 0, 100, 7]
+// numbers.sort((n1, n2) => n1 - n2).forEach(n => console.log(n))
+/* numbers
+    .filter(n => n > 0)
+    .map(n => n * n)
+    .sort((n1, n2) => n1 - n2)
+    .forEach(n => console.log(n)) */
+
+/* const result = numbers
+    .filter(n => n > 0)
+    .map(n => n * n)
+    .sort((n1, n2) => n1 - n2)
+    .reduce((sum, n) => sum += n)
+console.log(result) */
+
+/* const people = [
+    {
+        'name': 'John',
+        'age': 25
+    },
+    {
+        'name': 'Bill',
+        'age': 65
+    },
+    {
+        'name': 'Sarah',
+        'age': 40
+    }
+]
+
+const result1 = people
+    .filter(p => p.age < 60)
+
+const result2 = result1
+    .reduce((sum, p) => sum += p.age, 0)
+// console.log(typeof result2)
+console.log(result2 / result1.length) */
+
+const peopleMap = new Map()
+peopleMap.set('John', 25)
+peopleMap.set('Bill', 65)
+peopleMap.set('Sarah', 40)
+console.log(peopleMap)
+
+peopleMap.set('Bill', 66)
+console.log(peopleMap)
+
+console.log(peopleMap.has('Bill'))
+console.log(peopleMap.has('Noname'))
+
+console.log(peopleMap.get('Bill'))
+
+const authors = new Set()
+authors.add('A1')
+authors.add('A2')
+authors.add('A3')
+console.log(authors)
+authors.add('A2')
+console.log(authors)
+
+const webResources = new WeakMap()
+webResources.set({'url': '/shopping/?category=tablet'}, '<div>tablet list</div>')
+webResources.set({'url': '/shopping/?category=desktop'}, '<div>pc list</div>')
+webResources.set({'url': '/shopping/?category=tablet'}, '<div>tablet list</div>')
+webResources.set({}, '<div>empty list</div>')
+
+for (let index = 0; index < 10000; index++) {
+    const x = new Array(10000).join('*')
+}
+
+console.log(webResources)
